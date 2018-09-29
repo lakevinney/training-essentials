@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -55,6 +56,27 @@ void showPollResults( int q1, int q2, int q3 )
                 cout << "+";
 	
 	cout << endl;
+}
+
+bool isDivisible( int num, int divisor )
+{
+        return num % divisor == 0;
+}
+
+bool isPrime( int num )
+{
+        for ( int i = 2; i < sqrt(num); ++i )
+                if ( isDivisible( num, i ) )
+                        return false;
+
+        return true;
+}
+
+void printPrimeNumbers( const int limit )
+{
+	for ( int i = 0; i < limit; ++i )
+		if ( isPrime( i ) )
+			cout << i << endl;
 }
 
 int main()
@@ -147,7 +169,7 @@ int main()
 
 	}*/
 
-	string quest;
+/*	string quest;
 	string answers[3];
 	
 	while ( true ) {
@@ -190,7 +212,9 @@ int main()
 		else if ( choice == 3 ) q3++;		
 	}
 
-	showPollResults( q1, q2, q3 );
+	showPollResults( q1, q2, q3 );*/
+
+	printPrimeNumbers( 100 );
 }
 
 
